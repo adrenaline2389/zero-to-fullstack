@@ -19,3 +19,7 @@ dist/
 .env*
 
 zero-to-tech-demos
+
+backend/.venv
+backend/__pycache__/
+*.pyc
