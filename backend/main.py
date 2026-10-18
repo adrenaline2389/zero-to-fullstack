@@ -1,6 +1,8 @@
 from fastapi import FastAPI
 from pydantic import BaseModel
 from fastapi.middleware.cors import CORSMiddleware
+from pypinyin import lazy_pinyin, Style
+from snownlp import SnowNLP
 
 app = FastAPI()
 
@@ -33,11 +35,23 @@ class AnalyzeRequest(BaseModel):
 def get_profile():
     return profile
 
+
+def score_label(score):
+    if score > 0.6:
+        return "Positive"
+    elif score < 0.4:
+        return "Negative"
+    else:
+        return "Neutral"
+
 @app.post("/api/analyze")
 def analyze(req: AnalyzeRequest):
+    text = req.text
+    score = round(SnowNLP(text).sentiments, 2)
+    pinyin = " ".join(lazy_pinyin(text, style=Style.TONE))
     return {
-        "text": req.text,
-        "score": 0.69,
-        "label": "positive",
-        "pinyin": "zhè shì yī gè cè shì",
+        "text": text,
+        "score": score,
+        "label": score_label(score),
+        "pinyin": pinyin,
     }

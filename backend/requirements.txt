@@ -36,6 +36,7 @@ pydantic-extra-types==2.11.1
 pydantic-settings==2.16.0
 pydantic_core==2.50.1
 Pygments==2.21.0
+pypinyin==0.55.0
 python-dotenv==1.2.4
 python-multipart==0.0.32
 PyYAML==6.0.3
@@ -45,6 +46,7 @@ rich-toolkit==0.20.6
 rignore==0.8.1
 sentry-sdk==2.72.0
 shellingham==1.5.4
+snownlp==0.12.3
 starlette==1.8.0
 typer==0.27.3
 typing-inspection==0.4.4
