@@ -235,3 +235,9 @@
   font-size: 15px;
   line-height: 1.4;
 }
+
+.primary-button:disabled,
+.primary-button:disabled:hover {
+  opacity: 0.45;
+  cursor: not-allowed;
+}

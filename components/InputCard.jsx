@@ -12,6 +12,8 @@ export default function InputCard({ onResult }) {
   const [error, setError] = useState("");
 
   async function handleAnalyze() {
+    if (!text.trim()) return;
+    
     setError("");
 
     try {
@@ -51,7 +53,7 @@ export default function InputCard({ onResult }) {
         {/* state 现身：text 一变，这行数字自动跟着变 */}
         <p className="lab-count">已输入 {text.length} 字</p>
         {error && <p className="lab-error">{error}</p>}
-        <button className="primary-button" type="button" onClick={handleAnalyze}>
+        <button className="primary-button" type="button" onClick={handleAnalyze} disabled={!text.trim()}>
           开始分析
         </button>
       </form>
