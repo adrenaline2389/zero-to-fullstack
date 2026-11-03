@@ -12,8 +12,28 @@ body {
 
 .page-shell {
   width: min(var(--maxw), calc(100% - 40px));
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
   margin: 0 auto;
   padding: 0 0 32px;
+}
+
+.page-content {
+  flex: 1;
+}
+
+.site-footer {
+  margin-top: 40px;
+  text-align: center;
+  color: var(--text-muted);
+  font-size: 12px;
+}
+
+.site-footer a:hover,
+.site-footer a:focus-visible {
+  color: var(--brand);
+  text-decoration: underline;
 }
 
 .dashboard-grid {
