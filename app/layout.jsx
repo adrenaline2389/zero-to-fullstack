@@ -35,6 +35,13 @@ export default function RootLayout({ children }) {
               >
                 粤ICP备2026171134号-1
               </a>
+              <a
+                href="https://beian.mps.gov.cn/#/query/webSearch?code=44010502004544"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                粤公网安备44010502004544号
+              </a>
             </footer>
           </div>
         </div>
